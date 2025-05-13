@@ -63,4 +63,5 @@ public class Vehicle {
        System.out.print("What is the Vehicles Fuel Capacity:  ");
        this.fuelCapacity = input.nextInt();
    }
+
 }
