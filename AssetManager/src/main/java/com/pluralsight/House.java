@@ -6,8 +6,8 @@ public class House extends Asset{
     private int squareFoot;
     private int lotSize;
 
-    public House(String description, String dateAcquired, double originalcost, String address, int condition, int squareFoot, int lotSize) {
-        super(description, dateAcquired, originalcost);
+    public House(String description, String dateAcquired, double originalCost, String address, int condition, int squareFoot, int lotSize) {
+        super(description, dateAcquired, originalCost);
         this.address = address;
         this.condition = condition;
         this.squareFoot = squareFoot;
@@ -45,11 +45,21 @@ public class House extends Asset{
     public void setLotSize(int lotSize) {
         this.lotSize = lotSize;
     }
-    @Override//todo square feet times value (determined by condition)
+    @Override
     public double getValue(){
-        return super.getValue();
-
+        switch (condition){
+            case 1:
+               return (180.00 * squareFoot) + (lotSize * .25);
+            case 2:
+                return (130.00 * squareFoot) + (lotSize * .25);
+            case 3:
+                return (90.00 * squareFoot) + (lotSize * .25);
+            case 4:
+                return (80.00 * squareFoot) + (lotSize * .25);
+        }
+        return 0.0;
     }
+
 
     @Override
     public String toString() {

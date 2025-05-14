@@ -2,16 +2,16 @@ package com.pluralsight;
 
 import java.util.Scanner;
 
-public class Asset {
+public abstract class Asset {
     Scanner input = new Scanner(System.in);
     protected String description;
     protected String dateAcquired;
     protected double originalCost;
 
-    public Asset(String description, String dateAcquired, double originalcost) {
+    public Asset(String description, String dateAcquired, double originalCost) {
         this.description = description;
         this.dateAcquired = dateAcquired;
-        this.originalCost = originalcost;
+        this.originalCost = originalCost;
     }
 
     public String getDescription() {
@@ -41,4 +41,5 @@ public class Asset {
     public double getValue(){
         return originalCost;
     }
+
 }
